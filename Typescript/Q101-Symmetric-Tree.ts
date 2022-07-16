@@ -1,0 +1,30 @@
+/**
+ * Definition for a binary tree node.
+ * class TreeNode {
+ *     val: number
+ *     left: TreeNode | null
+ *     right: TreeNode | null
+ *     constructor(val?: number, left?: TreeNode | null, right?: TreeNode | null) {
+ *         this.val = (val===undefined ? 0 : val)
+ *         this.left = (left===undefined ? null : left)
+ *         this.right = (right===undefined ? null : right)
+ *     }
+ * }
+ */
+
+ function helper(p: TreeNode | null,q: TreeNode | null):boolean{
+    if(p==null && q==null){
+            return true;
+        }else if(p==null || q==null){
+            return false;
+        }
+        if(p.val!=q.val){
+            return false;
+        }
+        return helper(p.left,q.right) && helper(p.right,q.left);
+}
+
+function isSymmetric(root: TreeNode | null): boolean {
+if(root==null) return false;
+    return helper(root.left,root.right);
+};
