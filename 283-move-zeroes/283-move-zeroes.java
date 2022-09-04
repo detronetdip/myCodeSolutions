@@ -9,8 +9,8 @@ class Solution {
                 }
                 if(j<n){
                     int t=nums[i];
-                nums[i]=nums[j];
-                nums[j]=t;
+                    nums[i]=nums[j];
+                    nums[j]=t;
                 }
             }
         }
