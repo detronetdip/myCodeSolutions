@@ -28,7 +28,6 @@ class Solution {
                 k++;
             }
         if(tl%2==0) {
-            System.out.print(f[(tl/2)-1]);
             return (f[tl/2]+f[(tl/2)-1])/2.0;
         }
         
