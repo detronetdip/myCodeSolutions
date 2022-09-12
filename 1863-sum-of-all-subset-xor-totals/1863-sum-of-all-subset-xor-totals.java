@@ -1,26 +1,11 @@
 class Solution {
-    private static void helper(int ind,List<List<Integer>> ans,ArrayList<Integer> ds,int[] arr){
-        if(ind==arr.length){
-            if(ds.size()>0) ans.add(new ArrayList<>(ds));
-            return;
-        }
-        ds.add(arr[ind]);
-        helper(ind+1,ans,ds,arr);
-        ds.remove(ds.size()-1);
-        helper(ind+1,ans,ds,arr);
+    private int helper(int[] nums, int index, int currentXor) {
+        if (index == nums.length) return currentXor;
+        int pick = helper(nums, index + 1, currentXor ^ nums[index]);
+        int notpick = helper(nums, index + 1, currentXor);
+        return pick + notpick;
     }
     public int subsetXORSum(int[] nums) {
-        List<List<Integer>> ans=new ArrayList<>();
-        ArrayList<Integer> ds=new ArrayList<>();
-        helper(0,ans,ds,nums);
-        int sum=0;
-        for(int i=0;i<ans.size();i++){
-            int x=0;
-            for(int j=0;j<ans.get(i).size();j++){
-                x^=ans.get(i).get(j);
-            }
-            sum+=x;
-        }
-        return sum;
+        return helper(nums,0,0);
     }
 }
