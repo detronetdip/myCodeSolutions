@@ -17,7 +17,6 @@ class Solution {
                 map.put(items2[i][0],map.get(items2[i][0])+items2[i][1]);
             }
         }
-        // System.out.println(map);
         List<List<Integer>> list=new ArrayList<>();
         for(Map.Entry<Integer,Integer> entry:map.entrySet()){
             List<Integer> l=new ArrayList<>();
@@ -25,6 +24,8 @@ class Solution {
             l.add(entry.getValue());
             list.add(l);
         }
+
+        
         return list;
     }
 }
