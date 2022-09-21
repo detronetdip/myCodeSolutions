@@ -9,7 +9,7 @@ class Solution {
                 g=(char)c+g;
             }
         }
-        System.out.println(f+"   "+g);
+        // System.out.println(f+"   "+g);
         return g.equals(f);
     }
 }
