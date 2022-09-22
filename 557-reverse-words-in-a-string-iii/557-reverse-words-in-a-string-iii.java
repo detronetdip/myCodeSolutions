@@ -3,12 +3,12 @@ class Solution {
         char[] ch=s.toCharArray();
         String ans="";
         String tmp="";
-        for(char c:ch){
-            if(c==' '){
+        for(int i=0;i<s.length();i++){
+            if(s.charAt(i)==' '){
                 ans+=tmp+" ";
                 tmp="";
             }else{
-                tmp=c+tmp;
+                tmp=s.charAt(i)+tmp;
             }            
         }
         ans+=tmp;
